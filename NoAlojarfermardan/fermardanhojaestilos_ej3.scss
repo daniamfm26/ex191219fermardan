@@ -1,0 +1,58 @@
+
+@mixin colorfermardan($colorf,$color) {
+    background-color: $colorf;
+    color: $color;
+}
+
+%estiloffermardan {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 18px;
+    
+}
+.btn {
+    @include colorfermardan(white,#888);
+    @extend %estiloffermardan;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 5px;
+  font-weight: 600;
+}
+
+/* Element */
+.btn__price {
+    @include colorfermardan(white,#fff);
+  padding-right: 12px;
+  padding-left: 12px;
+  margin-right: -10px; /* realign button text padding */
+  opacity: 0.4;
+  background-color: #333; /*Esto es absurdo*/
+//   border-radius: 5px 0 0 5px; Lo comento porque lo hereda
+  font-weight: 600;
+} /* Element */
+.btn__text {
+  padding: 0 10px;
+//   border-radius: 0 5px 5px 0; Lo comento porque lo hereda
+} /* Modifier */
+.btn--big {
+  font-size: 28px;
+  padding: 10px;
+  font-weight: 400;
+} /* Modifier */
+.btn--blue {
+  border-color: #0074d9;
+  @include colorfermardan(#0074d9,white);
+} /* Modifier */
+.btn--orange {
+  border-color: #ff4136;
+  @include colorfermardan(#ff4136,white);
+} /* Modifier */
+.btn--green {
+  border-color: #3d9970;
+  @include colorfermardan(#3d9970,white);
+}
+body {
+  font-family: "fira-sans-2", sans-serif;
+  background-color: #ccc;
+}
