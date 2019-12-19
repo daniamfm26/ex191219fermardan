@@ -1,0 +1,61 @@
+@mixin mixinfermardanej2($ancho,$color,$estilo,$colorf) {
+    outline: $ancho $color $estilo;
+    text-align: left;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+    color: $colorf;
+}
+
+
+h1{
+    margin: auto;
+    width: 50%;
+    color: midnightblue;
+    
+}
+
+
+@media screen and (min-width: 600px){
+    .elemento{
+        float: left;
+        display: block;
+        margin: 10px;
+        padding: 14px 16px;
+        @include mixinfermardanej2(5px,lightskyblue,solid,blue);
+    
+    }
+}
+@media screen and (max-width: 600px){
+    .elemento{
+        @include mixinfermardanej2(5px,blue,solid,lightskyblue);
+        width: auto;
+        float: none;
+        margin-top: 20px;
+    }
+
+}
+
+
+
+
+.contenedormenufermardan{
+    overflow: hidden;
+    background-color: lightskyblue;
+    
+    .enlacesfermardan{
+        float: left;
+        display: block;
+        color: blueviolet;
+        text-align: center;
+        margin: 10px;
+        padding: 14px 16px;
+        font-size: 20px;
+        background-color: #f1f1f1;
+    }
+}
+@media screen and (max-width: 450px){
+    .enlacesfermardan{
+        float: none;
+        width: 100%;
+    }
+
+}

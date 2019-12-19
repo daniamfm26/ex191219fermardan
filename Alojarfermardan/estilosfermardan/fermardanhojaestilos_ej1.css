@@ -61,7 +61,7 @@ body h3::before {
   background-color: #f1f1f1;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 400px) {
   .enlacesfermardan {
     float: none;
     width: 100%;
