@@ -1,0 +1,71 @@
+@charset "UTF-8";
+body {
+  counter-reset: plataformafermardan;
+}
+body h1 {
+  counter-reset: seriesfermardan;
+}
+body h1::before {
+  counter-increment: plataformafermardan;
+  content: "Suscripción " counter(plataformafermardan) ". ";
+}
+body h2::before {
+  counter-reset: personajesfermardan;
+  counter-increment: seriesfermardan;
+  content: counter(plataformafermardan) "." counter(seriesfermardan) " ";
+}
+body h3::before {
+  counter-increment: personajesfermardan;
+  content: counter(plataformafermardan) "." counter(seriesfermardan) "." counter(personajesfermardan) " ";
+  color: dodgerblue;
+}
+
+.contenedorflexfermardan .contenedorhija1fermardan .contenedornietafermardan, .contenedorflexfermardan .contenedorhija1fermardan, .contenedorflexfermardan {
+  display: flex;
+}
+
+.claseparcialfermardan {
+  margin-top: 50px;
+  border: lightgreen 3px solid;
+}
+
+.contenedorflexfermardan {
+  min-height: 400px;
+  outline: 5px dodgerblue solid;
+}
+.contenedorflexfermardan .contenedorhija1fermardan {
+  width: 50%;
+  border: 1px black solid;
+  background-color: #f1f1f1;
+  padding: 10px;
+}
+.contenedorflexfermardan .contenedorhija1fermardan .contenedornietafermardan {
+  width: 33.3333333333%;
+  border: 1px lightcoral solid;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedormenufermardan {
+  overflow: hidden;
+  background-color: lightskyblue;
+}
+.contenedormenufermardan .enlacesfermardan {
+  float: left;
+  display: block;
+  color: mediumblue;
+  text-align: center;
+  margin: 10px;
+  padding: 14px 16px;
+  font-size: 20px;
+  background-color: #f1f1f1;
+}
+
+@media screen and (max-width: 450px) {
+  .enlacesfermardan {
+    float: none;
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=fermardanhojaestilos_ej1extra.css.map */

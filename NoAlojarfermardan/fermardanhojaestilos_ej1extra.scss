@@ -1,0 +1,81 @@
+body {
+  counter-reset: plataformafermardan;
+  h1 {
+    counter-reset: seriesfermardan;
+  }
+  h1::before {
+    counter-increment: plataformafermardan;
+    content: "Suscripción " counter(plataformafermardan) ". ";
+  }
+  h2::before {
+    counter-reset: personajesfermardan;
+    counter-increment: seriesfermardan;
+    content: counter(plataformafermardan) "." counter(seriesfermardan) " ";
+  }
+  h3::before {
+    counter-increment: personajesfermardan;
+    content: counter(plataformafermardan) "." counter(seriesfermardan) "." counter(personajesfermardan) " ";
+    color: dodgerblue;
+  }
+}
+
+%contenedorfermardan{
+    display: flex;  
+}
+@mixin bordefermardan($color) {
+    border: 1px $color solid;
+}
+
+@mixin tamañofermardan($hijas){
+    width: 1/$hijas*100%;
+}
+
+
+@import "parcial1fermardan.scss";
+.contenedorflexfermardan {
+    @extend %contenedorfermardan;
+    min-height: 400px;
+    outline: 5px dodgerblue solid;
+    .contenedorhija1fermardan{
+        @extend %contenedorfermardan;
+        @include tamañofermardan(2);
+        @include bordefermardan(black);
+        background-color: #f1f1f1;
+        padding: 10px;
+        .contenedornietafermardan{
+            @extend %contenedorfermardan;
+            @include tamañofermardan(3);
+            @include bordefermardan(lightcoral);
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+
+
+
+    
+.contenedormenufermardan{
+    overflow: hidden;
+    background-color: lightskyblue;
+    
+    .enlacesfermardan{
+        float: left;
+        display: block;
+        color: mediumblue;
+        text-align: center;
+        margin: 10px;
+        padding: 14px 16px;
+        font-size: 20px;
+        background-color: #f1f1f1;
+    }
+}
+@media screen and (max-width: 450px){
+    .enlacesfermardan{
+        float: none;
+        width: 100%;
+    }
+
+}
+
+
